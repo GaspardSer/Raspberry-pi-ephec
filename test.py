@@ -1,4 +1,4 @@
-from gpiozero import LED, button
+from gpiozero import LED
 """
 led1 = LED(4)
 led2 = LED(5)
