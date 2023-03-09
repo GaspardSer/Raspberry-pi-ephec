@@ -1,7 +1,14 @@
-from gpiozero import DistanceSensor
-from time import sleep
+from gpiozero import LED, button
+"""
+led1 = LED(4)
+led2 = LED(5)
+led3 = LED(6)
+led4 = LED(13)
+led5 = LED(19)
+led6 = LED(26)
+"""
+led = []
+for i in [4,5,6,13,19,26]:
+    led.append(LED(i))
 
-sensor = DistanceSensor(echo=4, trigger=2)
-while True:
-    print('Distance: ', sensor.distance * 100)
-    sleep(1)
+led[0].on()
