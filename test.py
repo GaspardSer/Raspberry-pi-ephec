@@ -3,6 +3,13 @@ import time
 
 led = [4, 5, 6, 13, 19, 26]
 
+while True:
+    for i in led:
+        LED(i).on()
+        sleep(1)
+        LED(i).off()
+        sleep(1)
+
 def onOff(led, t):
     led.on()
     time.sleep(t)
