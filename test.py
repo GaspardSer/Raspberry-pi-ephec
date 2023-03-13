@@ -11,10 +11,12 @@ def onOff(led, t):
 
 
 #while True:
-if Button(23).is_pressed() == True:
+button1 = Button(23)
+button2 = Button(24)
+if Button(23).is_pressed():
     for i in led:
         onOff(LED(i), 0.1)
-if Button(24).is_pressed() == True:
+if Button(24).is_pressed():
     for j in reversed(led):
         onOff(LED(j), 0.1)
 
