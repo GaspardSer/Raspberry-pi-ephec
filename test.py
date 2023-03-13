@@ -12,9 +12,19 @@ led = []
 for i in [4,5,6,13,19,26]:
     led.append(i)
 
-for i in led:
-    LED(i).blink()
-    sleep(1)
+LED(4).blink()
+sleep(1)
+LED(5).blink()
+sleep(1)
+LED(6).blink()
+sleep(1)
+LED(13).blink()
+sleep(1)
+LED(19).blink()
+sleep(1)
+LED(26).blink()
+sleep(1)
+
 
 """button1 = Button(23)
 button2 = Button(24)
