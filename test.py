@@ -1,20 +1,22 @@
-from gpiozero import LED, Button
-from time import sleep
-"""
-led1 = LED(4)
-led2 = LED(5)
-led3 = LED(6)
-led4 = LED(13)
-led5 = LED(19)
-led6 = LED(26)
-"""
-led = []
-for i in [4,5,6,13,19,26]:
-    led.append(i)
+from gpiozero import LED
+import time
 
-for i in led:
-    LED(i).blink()
-    sleep(1)
+led = [4, 5, 6, 13, 19, 26]
+
+def onOff(led, t):
+    led.on()
+    time.sleep(t)
+    led.off()
+    time.sleep(t)
+
+
+while True:
+    onOff(LED(4), 2)
+    onOff(LED(5), 2)
+    onOff(LED(6), 2)
+    onOff(LED(13), 2)
+    onOff(LED(19), 2)
+    onOff(LED(26), 2)
 
 """button1 = Button(23)
 button2 = Button(24)
