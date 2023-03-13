@@ -1,4 +1,5 @@
 from gpiozero import LED, Button
+from time import sleep
 """
 led1 = LED(4)
 led2 = LED(5)
@@ -13,8 +14,8 @@ for i in [4,5,6,13,19,26]:
 
 while True:
     for i in led:
-        i.on()
-        i.off()
+        i.blink
+        sleep(1)
 
 button1 = Button(23)
 button2 = Button(24)
