@@ -11,7 +11,10 @@ led = []
 for i in [4,5,6,13,19,26]:
     led.append(LED(i))
 
-led[0].on()
+while True:
+    for i in led:
+        i.on()
+        i.off()
 
 button1 = Button(23)
 button2 = Button(24)
