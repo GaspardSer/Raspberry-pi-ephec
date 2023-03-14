@@ -30,20 +30,20 @@ while True:
         led[0].off()
 """
 from gpiozero import LED, Button
-from time import sleep
+from time import sleep, time
 
 # Initialize LED and button objects for each LED/button on the board
-yellow_led1 = LED(4)
+green_led1 = LED(4)
 yellow_led2 = LED(5)
 yellow_led3 = LED(6)
 yellow_led4 = LED(13)
-green_led1 = LED(19)
-green_led2 = LED(29)
+yellow_led1 = LED(19)
+green_led2 = LED(26)
 button1 = Button(23)
 button2 = Button(24)
 
 # Set up a list of LEDs to be used for the ping pong game
-leds = [yellow_led1, yellow_led2, yellow_led3, yellow_led4, green_led2, green_led1]
+leds = [green_led1, yellow_led1, yellow_led2, yellow_led3, yellow_led4, green_led2]
 
 # Define a function to blink the LEDs in sequence
 def blink_sequence():
