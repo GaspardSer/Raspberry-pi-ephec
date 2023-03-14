@@ -31,6 +31,10 @@ while True:
 """
 from gpiozero import LED, Button
 from time import sleep, time
+import random
+
+#num = random.randint(1, 2)
+
 
 # Initialize LED and button objects for each LED/button on the board
 green_led1 = LED(4)
@@ -51,13 +55,24 @@ def blink_sequence():
         leds[i].on()
         sleep(0.2)
         leds[i].off()
+    
+def blink_sequence_reversed():
     for j in reversed(range(len(leds))):
         leds[j].on()
         sleep(0.2)
         leds[j].off()
 
+def blink_3_times():
+    for i in range(3):
+        for j in range(len(leds)):
+        leds[j].on()
+        sleep(0.2)
+        leds[j].off() 
+        
+
 # Define a function to play a round of ping pong
 def play_round():
+    blink_3_times()
     blink_sequence()
     green_led1.on()
     green_led2.on()
