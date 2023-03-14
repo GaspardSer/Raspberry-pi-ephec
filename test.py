@@ -51,6 +51,10 @@ def blink_sequence():
         leds[i].on()
         sleep(0.1)
         leds[i].off()
+    for j in range(len(led)):
+        leds[j].on()
+        sleep(0.2)
+        leds[j].off()
 
 # Define a function to play a round of ping pong
 def play_round():
