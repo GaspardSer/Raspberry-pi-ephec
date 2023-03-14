@@ -49,9 +49,9 @@ leds = [green_led1, yellow_led1, yellow_led2, yellow_led3, yellow_led4, green_le
 def blink_sequence():
     for i in range(len(leds)):
         leds[i].on()
-        sleep(0.1)
+        sleep(0.2)
         leds[i].off()
-    for j in range(len(led)):
+    for j in reversed(range(len(leds))):
         leds[j].on()
         sleep(0.2)
         leds[j].off()
