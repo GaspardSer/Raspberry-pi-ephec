@@ -64,11 +64,11 @@ def blink_sequence_reversed():
 
 def blink_3_times():
     for i in range(3):
-        for led in leds:
-            led.on() 
-        sleep(1)
-        for led in leds:
-            led.off()
+        green_led1.on()
+        green_led2.on()
+        sleep(0.5)
+        green_led1.off()
+        green_led2.off()
         
 
 # Define a function to play a round of ping pong
