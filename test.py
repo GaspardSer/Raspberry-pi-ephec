@@ -34,10 +34,10 @@ from time import sleep, time
 
 # Initialize LED and button objects for each LED/button on the board
 green_led1 = LED(4)
-yellow_led2 = LED(5)
-yellow_led3 = LED(6)
-yellow_led4 = LED(13)
-yellow_led1 = LED(19)
+yellow_led1 = LED(5)
+yellow_led2 = LED(6)
+yellow_led3 = LED(13)
+yellow_led4 = LED(19)
 green_led2 = LED(26)
 button1 = Button(23)
 button2 = Button(24)
@@ -49,7 +49,7 @@ leds = [green_led1, yellow_led1, yellow_led2, yellow_led3, yellow_led4, green_le
 def blink_sequence():
     for i in range(len(leds)):
         leds[i].on()
-        sleep(1)
+        sleep(0.1)
         leds[i].off()
 
 # Define a function to play a round of ping pong
