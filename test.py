@@ -49,11 +49,13 @@ def play_round():
         green_led2.on()
         start_time = time()
         if button1.is_pressed and time() - start_time < 0.2 and green_led1.is_lit:
+            print("P1 HIT")
             return 1
-        elif button2.is_pressed and green_led2.is_lit and time() - start_time < 0.2:
+        if button2.is_pressed and green_led2.is_lit and time() - start_time < 0.2:
+            print("P2 HIT")
             blink_sequence_reversed()
-        else:
-            return 2
+        if time() - start_time > 0.2:
+            print()
 
 while True:
     result = play_round()
