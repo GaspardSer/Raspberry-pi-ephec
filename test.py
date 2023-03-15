@@ -45,7 +45,7 @@ def blink_3_times():
 def play_round_p1(t):
     round = blink_sequence(t)
     if round == 1:
-        "P2 Hit too soon"
+        print("P2 Hit too soon")
         return 1
     start_time = time()
     while time() - start_time < t:
@@ -58,11 +58,11 @@ def play_round_p1(t):
 def play_round_p2(t):
     round = blink_sequence_reversed(t)
     if round == 1:
-        "P1 Hit too soon"
+        print("P1 Hit too soon")
         return 1
     start_time = time()
     while time() - start_time < t:
-        if button2.is_pressed:
+        if button1.is_pressed:
             print("P1 HIT")
             return 2
     return 1
@@ -84,7 +84,7 @@ def play(t):
                 break
             
 
-play(1)
+play(0.5)
 
 """
 
