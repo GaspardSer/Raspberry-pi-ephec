@@ -43,7 +43,7 @@ def index():
 </style>
 </head>
 <body>
-<h1>Controle une LED</h1>
+<h1>Play Ping Pong/h1>
 <a href="/ping pong" class="button">Play</a>
 </body>
 </html>
@@ -113,13 +113,13 @@ def play(t):
         green_led2.off()
         if result == 1:
             print("P1 WINS")
-            break
+            return redirect('/')
         elif result == 2:
             result = play_round_p2(t)
             green_led1.off()
             if result == 1:
                 print("P2 WINS")
-                break
+                return redirect('/')
 
 play(0.5)
 
