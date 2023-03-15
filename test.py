@@ -52,9 +52,9 @@ def index():
 </html>
 """
 @app.route('/play', methods=['POST'])
-def play():
-    # Execute the play() function here
-    return "Function play() has been executed."
+def play_web():
+    play(0.5)
+    return redirect('/')
 
 def blink_sequence(t):
     for i in range(len(leds)):
