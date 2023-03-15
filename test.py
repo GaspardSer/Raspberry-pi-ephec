@@ -85,36 +85,3 @@ def play(t):
             
 
 play(0.5)
-
-"""
-
-from gpiozero import LED, Button
-import time
-
-led = [4, 5, 6, 13, 19, 26]
-button1 = Button(23)
-button2 = Button(24)
-
-def onOff(led, t):
-    led.on()
-    time.sleep(t)
-    led.off()
-
-
-while True:
-    if button1.is_pressed():
-        for i in led:
-            onOff(LED(i), 0.1)
-    if button2.is_pressed():
-        for j in reversed(led):
-            onOff(LED(j), 0.1)
-
-
-button1 = Button(23)
-button2 = Button(24)
-while True:
-    if button1.is_pressed() == True:
-        led[0].on()
-    else:
-        led[0].off()
-"""
