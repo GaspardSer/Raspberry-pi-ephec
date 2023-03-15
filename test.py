@@ -70,11 +70,12 @@ def play():
         green_led2.off()
         if result == 1:
             print("P1 WINS")
-        elif result == 2:q<
+        elif result == 2:
             result = play_round_p2()
+            green_led1.off()
             if result == 1:
                 print("P2 WINS")
-                green_led1.off()
+            
 
 play()
 
