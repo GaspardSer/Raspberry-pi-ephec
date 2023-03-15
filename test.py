@@ -44,16 +44,11 @@ def index():
 </head>
 <body>
 <h1>Play Ping Pong/h1>
-<a href="/ping pong" class="button">Play</a>
+<button onclick="play(0.5)">Play</button>
 </body>
 </html>
 """
 
-
-@app.route('/pingpong')
-def play_website():
-    play(0.5)
-    return redirect('/')
 def blink_sequence(t):
     for i in range(len(leds)):
         leds[i].on()
