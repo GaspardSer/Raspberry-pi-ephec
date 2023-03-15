@@ -51,7 +51,6 @@ def play_round_p1():
     while time() - start_time < 0.2:
         if button2.is_pressed:
             print("P2 HIT")
-            green_led2.off()
             return 2
 
 def play_round_p2():
@@ -63,20 +62,22 @@ def play_round_p2():
     while time() - start_time < 0.2:
         if button2.is_pressed:
             print("P1 HIT")
-            green_led1.off()
             return 2
-def play()
+def play():
     blink_3_times()
     while True:
         result = play_round_p1()
+        green_led2.off()
         if result == 1:
             print("P1 WINS")
-        elif result == 2:
+        elif result == 2:q<
             result = play_round_p2()
             if result == 1:
                 print("P2 WINS")
+                green_led1.off()
 
 play()
+
 """
 
 from gpiozero import LED, Button
