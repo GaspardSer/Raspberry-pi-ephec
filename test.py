@@ -54,7 +54,7 @@ def play_round_p1():
             return 2
 
 def play_round_p2():
-    round = reversed_blink_sequence()
+    round = blink_sequenc_reversed()
     if round == 1:
         "P1 Hit too soon"
         return 1
