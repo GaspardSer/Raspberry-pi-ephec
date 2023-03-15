@@ -47,22 +47,20 @@ def play_round():
     while True:
         blink_sequence()
         green_led2.on()
-        sleep(0.2)
-        #blink_sequence_reversed()
-        if button1.is_pressed and green_led1.is_lit:
-            print("Player 1 wins!")
+        start_time = time()
+        if button1.is_pressed and time() - start_time < 0.2 and green_led1.is_lit:
             return 1
-        if button2.is_pressed and green_led2.is_lit:
-            print("Player 2 wins!")
+        elif button2.is_pressed and green_led2.is_lit and time() - start_time < 0.2:
+            blink_sequence_reversed()
+        else:
             return 2
-            """
 
 while True:
     result = play_round()
     if result == 1:
-        print("Player 1 scores!")
+        continue
     elif result == 2:
-        print("Player 2 scores!")
+        print("No")
     else:
         print("No one scores!")
 
