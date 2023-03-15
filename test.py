@@ -1,7 +1,8 @@
+from flask import Flask
 from gpiozero import LED, Button
 from time import sleep, time
 
-#num = random.randint(1, 2)
+app = Flask(__name__)
 
 green_led1 = LED(4)
 yellow_led1 = LED(5)
@@ -82,6 +83,47 @@ def play(t):
             if result == 1:
                 print("P2 WINS")
                 break
-            
 
-play(0.5)
+
+@app.route('/pingpong')
+def jouer():
+    play(0.5)
+    return redirect('/')
+
+
+def index():
+    # le 'f' devant nous permet de mettre des variables (en utilisant {}) dans le texte
+    return f"""
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<h1>PLAY PING PONG </h1>
+<a href="/pingpong" class="button">PLAY</a>
+</body>
+</html>
+"""
+
+app.run(host='0.0.0.0', port=8000, debug=True)
+
