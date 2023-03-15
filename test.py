@@ -43,7 +43,7 @@ def blink_3_times():
         
 
 def play_round_p1(t):
-    round = blink_sequence()
+    round = blink_sequence(t)
     if round == 1:
         "P2 Hit too soon"
         return 1
@@ -56,7 +56,7 @@ def play_round_p1(t):
 
 
 def play_round_p2(t):
-    round = blink_sequence_reversed()
+    round = blink_sequence_reversed(t)
     if round == 1:
         "P1 Hit too soon"
         return 1
@@ -69,7 +69,7 @@ def play_round_p2(t):
 
 
 def play(t):
-    blink_3_times(t)
+    blink_3_times()
     while True:
         result = play_round_p1(t)
         green_led2.off()
@@ -84,7 +84,7 @@ def play(t):
                 break
             
 
-play()
+play(1)
 
 """
 
