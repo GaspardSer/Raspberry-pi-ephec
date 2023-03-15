@@ -54,7 +54,7 @@ def index():
 @app.route('/play', methods=['POST'])
 def play_web():
     play(0.5)
-    return redirect('/')
+    return "Function play() has been executed."
 
 def blink_sequence(t):
     for i in range(len(leds)):
