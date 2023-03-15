@@ -24,13 +24,15 @@ def blink_sequence():
         sleep(0.2)
         leds[i].off()
     green_led2.on()
-    sleep(1)
+    sleep(0.2)
     
 def blink_sequence_reversed():
-    for j in reversed(range(len(leds))):
-        leds[j].on()
+    for i in reversed(range(len(leds))):
+        leds[i].on()
         sleep(0.2)
-        leds[j].off()
+        leds[i].off()
+    green_led1.on()
+    sleep(0.2)
 
 def blink_3_times():
     for i in range(3):
@@ -44,15 +46,17 @@ def blink_3_times():
 
 # Define a function to play a round of ping pong
 def play_round():
-    blink_3_times()
-    blink_sequence()
     while True:
+        blink_3_times()
+        blink_sequence()
+        """
         if button1.is_pressed and green_led1.is_lit:
             print("Player 1 wins!")
             return 1
         elif button2.is_pressed and green_led2.is_lit:
             print("Player 2 wins!")
             return 2
+            """
 
 # Play the game of ping pong
 while True:
