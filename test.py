@@ -51,7 +51,9 @@ def index():
 
 
 @app.route('/pingpong')
-
+def play_website():
+    play(0.5)
+    return redirect('/')
 def blink_sequence(t):
     for i in range(len(leds)):
         leds[i].on()
@@ -113,14 +115,13 @@ def play(t):
         green_led2.off()
         if result == 1:
             print("P1 WINS")
-            return redirect('/')
+            break
         elif result == 2:
             result = play_round_p2(t)
             green_led1.off()
             if result == 1:
                 print("P2 WINS")
-                return redirect('/')
+                break
 
-play(0.5)
 
 app.run(host='0.0.0.0', port=8000, debug=True)
