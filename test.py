@@ -14,19 +14,19 @@ button2 = Button(24)
 
 leds = [yellow_led1, yellow_led2, yellow_led3, yellow_led4]
 
-def blink_sequence():
+def blink_sequence(t):
     for i in range(len(leds)):
         leds[i].on()
-        sleep(0.2)
+        sleep(t)
         leds[i].off()
     if button2.is_pressed:
         return 1
     green_led2.on()
     
-def blink_sequence_reversed():
+def blink_sequence_reversed(t):
     for i in reversed(range(len(leds))):
         leds[i].on()
-        sleep(0.2)
+        sleep(t)
         leds[i].off()
     if button1.is_pressed:
         return 1
@@ -42,42 +42,42 @@ def blink_3_times():
         sleep(0.5)
         
 
-def play_round_p1():
+def play_round_p1(t):
     round = blink_sequence()
     if round == 1:
         "P2 Hit too soon"
         return 1
     start_time = time()
-    while time() - start_time < 0.2:
+    while time() - start_time < t:
         if button2.is_pressed:
             print("P2 HIT")
             return 2
     return 1
 
 
-def play_round_p2():
+def play_round_p2(t):
     round = blink_sequence_reversed()
     if round == 1:
         "P1 Hit too soon"
         return 1
     start_time = time()
-    while time() - start_time < 0.2:
+    while time() - start_time < t:
         if button2.is_pressed:
             print("P1 HIT")
             return 2
     return 1
 
 
-def play():
-    blink_3_times()
+def play(t):
+    blink_3_times(t)
     while True:
-        result = play_round_p1()
+        result = play_round_p1(t)
         green_led2.off()
         if result == 1:
             print("P1 WINS")
             break
         elif result == 2:
-            result = play_round_p2()
+            result = play_round_p2(t)
             green_led1.off()
             if result == 1:
                 print("P2 WINS")
