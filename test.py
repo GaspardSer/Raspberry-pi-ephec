@@ -47,7 +47,7 @@ button1 = Button(23)
 button2 = Button(24)
 
 # Set up a list of LEDs to be used for the ping pong game
-leds = [green_led1, yellow_led1, yellow_led2, yellow_led3, yellow_led4, green_led2]
+leds = [yellow_led1, yellow_led2, yellow_led3, yellow_led4]
 
 # Define a function to blink the LEDs in sequence
 def blink_sequence():
@@ -69,14 +69,13 @@ def blink_3_times():
         sleep(0.5)
         green_led1.off()
         green_led2.off()
+        sleep(0.5)
         
 
 # Define a function to play a round of ping pong
 def play_round():
     blink_3_times()
     blink_sequence()
-    green_led1.on()
-    green_led2.on()
     start_time = time()
     while True:
         if button1.is_pressed and green_led1.is_lit:
