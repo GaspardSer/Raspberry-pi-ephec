@@ -19,6 +19,8 @@ def blink_sequence():
         leds[i].on()
         sleep(0.2)
         leds[i].off()
+    if button2.is_pressed:
+        return 1
     green_led2.on()
     
 def blink_sequence_reversed():
@@ -26,6 +28,8 @@ def blink_sequence_reversed():
         leds[i].on()
         sleep(0.2)
         leds[i].off()
+    if button1.is_pressed:
+        return 1
     green_led1.on()
 
 def blink_3_times():
@@ -39,33 +43,40 @@ def blink_3_times():
         
 
 def play_round_p1():
-    blink_sequence()
-    sleep(5)
+    round = blink_sequence()
+    if round = 1:
+        "P2 Hit too soon"
+        return 1
+    start_time = time()
+    while time() - start_time < 0.2:
+        if button2.is_pressed:
+            print("P2 HIT")
+            green_led2.off()
+            return 2
+
+def play_round_p2():
+    round = reversed_blink_sequence()
+    if round = 1:
+        "P1 Hit too soon"
+        return 1
+    start_time = time()
+    while time() - start_time < 0.2:
+        if button2.is_pressed:
+            print("P1 HIT")
+            green_led1.off()
+            return 2
+def play()
     blink_3_times()
     while True:
-        blink_sequence()
-        green_led2.on()
-        start_time = time()
-        if button1.is_pressed and time() - start_time < 0.2 and green_led1.is_lit:
-            print("P1 HIT")
-            green_led2.off()
-            return 1
-        if button2.is_pressed and green_led2.is_lit and time() - start_time < 0.2:
-            print("P2 HIT")
-            blink_sequence_reversed()
-        if time() - start_time > 0.2:
-            green_led2.off()
-            print()
+        result = play_round_p1()
+        if result == 1:
+            print("P1 WINS")
+        elif result == 2:
+            result = play_round_p2()
+            if result == 1:
+                print("P2 WINS")
 
-while True:
-    result = play_round()
-    if result == 1:
-        continue
-    elif result == 2:
-        print("No")
-    else:
-        print("No one scores!")
-
+play()
 """
 
 from gpiozero import LED, Button
