@@ -85,10 +85,7 @@ def play(t):
                 break
 
 
-@app.route('/pingpong')
-def jouer():
-    play(0.5)
-    return redirect('/')
+
 
 
 def index():
@@ -127,3 +124,7 @@ def index():
 
 app.run(host='0.0.0.0', port=8000, debug=True)
 
+@app.route('/pingpong')
+def jouer():
+    play(0.5)
+    return redirect('/')
