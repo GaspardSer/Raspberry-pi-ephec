@@ -44,7 +44,7 @@ def blink_3_times():
 
 def play_round_p1():
     round = blink_sequence()
-    if round = 1:
+    if round == 1:
         "P2 Hit too soon"
         return 1
     start_time = time()
@@ -56,7 +56,7 @@ def play_round_p1():
 
 def play_round_p2():
     round = reversed_blink_sequence()
-    if round = 1:
+    if round == 1:
         "P1 Hit too soon"
         return 1
     start_time = time()
