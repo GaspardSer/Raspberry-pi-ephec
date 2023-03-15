@@ -53,8 +53,9 @@ def play_round_p1():
             print("P2 HIT")
             return 2
 
+
 def play_round_p2():
-    round = blink_sequenc_reversed()
+    round = blink_sequence_reversed()
     if round == 1:
         "P1 Hit too soon"
         return 1
@@ -63,6 +64,8 @@ def play_round_p2():
         if button2.is_pressed:
             print("P1 HIT")
             return 2
+
+
 def play():
     blink_3_times()
     while True:
