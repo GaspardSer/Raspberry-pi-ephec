@@ -20,8 +20,6 @@ def blink_sequence():
         sleep(0.2)
         leds[i].off()
     green_led2.on()
-    sleep(0.2)
-    green_led2.off()
     
 def blink_sequence_reversed():
     for i in reversed(range(len(leds))):
@@ -29,8 +27,6 @@ def blink_sequence_reversed():
         sleep(0.2)
         leds[i].off()
     green_led1.on()
-    sleep(0.2)
-    green_led1.off()
 
 def blink_3_times():
     for i in range(3):
@@ -42,7 +38,9 @@ def blink_3_times():
         sleep(0.5)
         
 
-def play_round():
+def play_round_p1():
+    blink_sequence()
+    sleep(5)
     blink_3_times()
     while True:
         blink_sequence()
@@ -50,11 +48,13 @@ def play_round():
         start_time = time()
         if button1.is_pressed and time() - start_time < 0.2 and green_led1.is_lit:
             print("P1 HIT")
+            green_led2.off()
             return 1
         if button2.is_pressed and green_led2.is_lit and time() - start_time < 0.2:
             print("P2 HIT")
             blink_sequence_reversed()
         if time() - start_time > 0.2:
+            green_led2.off()
             print()
 
 while True:
