@@ -19,35 +19,42 @@ leds = [yellow_led1, yellow_led2, yellow_led3, yellow_led4]
 def index():
     # note: les 3 guillemets permetent de définir une chaine de charactère multi-ligne
     return """
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<style>
-.button {
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 50px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  color: black;
-  border: 2px solid #4CAF50;
-}
-.button:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
-</head>
-<body>
-<h1>Play Ping Pong/h1>
-<button onclick="play(0.5)">Play</button>
-</body>
+    <head>
+        <style>
+    .button {
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 50px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    color: black;
+    border: 2px solid #4CAF50;
+    }
+    .button:hover {
+    background-color: #4CAF50;
+    color: white;
+    }
+    </style>
+        <title>Ping Pong</title>
+    </head>
+    <body>
+        <h1>Press the button to play Ping Pong</h1>
+        <form action="/play" method="post">
+            <button type="submit">Play</button>
+        </form>
+    </body>
 </html>
 """
+@app.route('/play', methods=['POST'])
+def play():
+    # Execute the play() function here
+    return "Function play() has been executed."
 
 def blink_sequence(t):
     for i in range(len(leds)):
