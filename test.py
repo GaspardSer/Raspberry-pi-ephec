@@ -52,6 +52,7 @@ def play_round_p1():
         if button2.is_pressed:
             print("P2 HIT")
             return 2
+    return 1
 
 
 def play_round_p2():
@@ -64,6 +65,7 @@ def play_round_p2():
         if button2.is_pressed:
             print("P1 HIT")
             return 2
+    return 1
 
 
 def play():
