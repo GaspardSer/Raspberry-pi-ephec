@@ -46,8 +46,8 @@ def blink_3_times():
 
 # Define a function to play a round of ping pong
 def play_round():
+    blink_3_times()
     while True:
-        blink_3_times()
         blink_sequence()
         """
         if button1.is_pressed and green_led1.is_lit:
