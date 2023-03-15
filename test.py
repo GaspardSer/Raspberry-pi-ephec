@@ -85,7 +85,7 @@ def play(t):
                 break
 
 
-
+@app.route('/')
 
 
 def index():
