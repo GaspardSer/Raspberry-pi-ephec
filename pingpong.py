@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from gpiozero import LED, Button
 from time import sleep, time
 
@@ -105,7 +105,7 @@ def index():
 @app.route('/play', methods=['POST'])
 def play_web():
     play(0.5)
-    return "Function play() has been executed."
+    return redirect(url_for('.index'))
 
 def blink_sequence(t):
     for i in range(len(leds)):
