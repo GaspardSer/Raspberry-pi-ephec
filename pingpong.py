@@ -22,7 +22,7 @@ def index():
 <!doctype html>
 <html>
     <head>
-        <style>
+    <style>
     .button {
     color: white;
     padding: 16px 32px;
@@ -46,14 +46,14 @@ def index():
     <body>
         <h1>Press the button to play Ping Pong</h1>
         <form action="/play" method="post">
-            <button type="submit">Play</button>
+            <button class="button" type="submit">Play</button>
         </form>
     </body>
 </html>
 """
 @app.route('/play', methods=['POST'])
 def play_web():
-    play(1)
+    play(0.5)
     return "Function play() has been executed."
 
 def blink_sequence(t):
