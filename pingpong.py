@@ -180,7 +180,7 @@ def play_web():
         </head>
         <body>
             <h1>Player 1 Wins!</h1>
-            <form action="/" method="post">
+            <form action="" method="post">
                 <div class="center">
                     <button class="button-64" role="button"><span class="text">Play again</span></button>
                         <!--Button from https://getcssscan.com/css-buttons-examples-->
@@ -265,7 +265,7 @@ def play_web():
             </head>
             <body>
                 <h1>Player 2 Wins!</h1>
-                <form action="/" method="post">
+                <form action="" method="post">
                     <div class="center">
                         <button class="button-64" role="button"><span class="text">Play again</span></button>
                             <!--Button from https://getcssscan.com/css-buttons-examples-->
