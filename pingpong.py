@@ -104,7 +104,7 @@ def index():
 """
 @app.route('/play', methods=['POST'])
 def play_web():
-    result_game = play(0.5)
+    result_game = play(1)
     if result_game == 1:
         return """
         <!doctype html>
@@ -362,7 +362,7 @@ def play(speed):
                 print("P2 WINS")
                 loose_p1()
                 return 2
-        speed *= 1.1
+        speed *= 1.3
 
 
 app.run(host='0.0.0.0', port=8000, debug=True)
